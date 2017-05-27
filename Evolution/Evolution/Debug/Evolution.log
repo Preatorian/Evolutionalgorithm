@@ -1,3 +1,4 @@
 ﻿  Evolution.cpp
+c:\users\u\source\repos\my-repository\evolution\evolution\evolve.cpp(14): warning C4101: "f": lokalna zmienna, do której nie istnieje odwołanie
   Evolution.vcxproj -> C:\Users\U\Source\Repos\My-repository\Evolution\Debug\Evolution.exe
   Evolution.vcxproj -> C:\Users\U\Source\Repos\My-repository\Evolution\Debug\Evolution.pdb (Partial PDB)

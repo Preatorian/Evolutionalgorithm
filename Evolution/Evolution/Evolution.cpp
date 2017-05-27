@@ -12,5 +12,6 @@ int main()
 	a.generate(7,2,100);
 	a.get();
     return 0;
+
 }
 

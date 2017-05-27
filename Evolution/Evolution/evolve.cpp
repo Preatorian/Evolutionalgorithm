@@ -8,6 +8,20 @@ class evolve
 
 	double **spiecies;
 	int aa, bb,modulo;
+
+	void sortbydet()
+	{
+		int a=0,b=0,f;
+
+		//spieces[a][b];
+	}
+	void change_det()
+	{
+		/*for (int i = 0; i < aa; i++)
+		{
+
+		}*/
+	}
 public:
 	void generate(int a, int b,int mod) 
 	{
@@ -35,8 +49,8 @@ public:
 			std::cout << std::endl;
 		}
 	}
-	double determinate(double a);
-
+	double determinating_function(double a);
+	
 
 
 };

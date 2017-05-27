@@ -1,5 +1,9 @@
-﻿################################################################################
-# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
-################################################################################
-
+﻿#Visual C++ cache files
 /.vs
+
+
+ipch/
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile

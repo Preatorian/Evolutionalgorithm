@@ -3,6 +3,8 @@
 
 
 ipch/
+*.aps
+*.ncb
 *.opendb
 *.opensdf
 *.sdf

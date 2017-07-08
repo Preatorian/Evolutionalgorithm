@@ -8,7 +8,7 @@ class evolve
 {
 
 	double **solutions;
-	int aa,modulo;
+	int aa,modulo,begin=0,end=0;
 public:
 	void sortbydet()//this method sorts all the solutions by the determinant
 	{
@@ -46,6 +46,8 @@ public:
 
 	void generate(int a,int begin,int end)// this method creates (int a) random solutions from range [begin,end] 
 	{
+		evolve::begin = begin;
+		evolve::end = end;
 		srand(time(NULL));
 		/*
 		solution[solution number][0] -> the value of the solution
@@ -66,18 +68,23 @@ public:
 	}
 	void crossing_and_mutation()
 	{
-		int mutant = rand() % 10;
+		int mutant,thisone;
 		double *childrens = new double[10];
-		for (int i = 0; i < 10; i ++)
-			childrens[i] = (solutions[i][0] + solutions[i + 1][0]) / 2.0;
+		for (int i = 0; i < 10; i++)
+		{
+			thisone = rand() % 2;
+			//childrens[i] = solutions[i][0]*abs(thisone) + solutions[i + 1][0]*abs(thisone-1) + (rand()%100)*0.01*(solutions[i][0] - solutions[i + 1][0]);
+			childrens[i] = (solutions[i][0] - solutions[i + 1][0])/2;
+		}
+		mutant = rand() % 10;
+		childrens[mutant] += childrens[mutant] + (-10+(rand()%20))*pow(10,-(rand()%6));// changes a random value in a random solution
 
-		childrens[mutant] += childrens[mutant] + (-10+(rand()%20))*pow(10,-(rand()%5));
 		for (int i = 0; i < 10; i++)
 			solutions[i+10][0] = childrens[i];
 	}
 
 
-	void get()// prints out all the solutions with teh determinants
+	void get()// prints out all the solutions with their determinants
 	{
 		for (int n = 0; n < aa; n++)
 		{
@@ -88,9 +95,8 @@ public:
 			std::cout << std::endl;
 		}
 	}
-	double determinating_function(double a) {
-		return abs(0.7*pow(a,5)+pow(a,4)-pow(a, 3)+0.3*pow(a, 2)-a-5);
-	}
+	double determinating_function(double a);//header of the function that sets the determinant
+	
 
 	
 
